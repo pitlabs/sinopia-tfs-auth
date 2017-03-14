@@ -1,0 +1,29 @@
+{
+  "name": "sinopia-tfs-auth",
+  "version": "0.0.1",
+  "description": "sinopia authentication plugin using TFS api",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pitlabs/sinopia-tfs-auth.git"
+  },
+  "keywords": [
+    "sinopia",
+    "auth",
+    "plugin",
+    "TFS"
+  ],
+  "author": "mpolitze",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pitlabs/sinopia-tfs-auth/issues"
+  },
+  "homepage": "https://github.com/pitlabs/sinopia-tfs-auth#readme",
+  "devDependencies": {
+    "express": "^4.15.2",
+    "mocha": "^3.2.0"
+  }
+}

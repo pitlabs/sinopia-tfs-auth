@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+    - "6"
+
+deploy:
+    provider: npm
+    email:
+        secure: KnawN7pHIlcvEgLBt+lBt7s/m2rx1LG+AbMrmZG4cqJSqYSozg5qD6IM1PNsw4V5nNgfDa84ZUzeey2j7YjoyuD8Dz1s1Y86DtnfOzHC+veXPzGc7zUCVzb+XJ568XVbj5A2tsdo1CspOMjQIqLeaAFzzpgW/P8KurfYn7SKxmNcrTOIvara9hPnaT9DacMXO1s4uYjQXaLlKK+FA/F54kBdNHjeeLjDskwDuDeUJynOwS0tDtncVCNLkQISH+dqlkuIe1fys6x7fa0/U8oFEE8vgJE5tVStNzDrLn3iPAVoDxFsfBVE85fMnGAPgL5m7oxjEPB/lwna6+C6R3FIS3p1OHGFnylZUtQI9lTu69Es/aWbwBmmyIbsyCyxuMZjp450b2TJ3BUd9G/w/T1AICzT0wYu/xlGUdQs6Z/ILoyu+09a9UQMvtrqWG2BEe+06rSEh4oQ/EXQLi65jDFQUBAdMWntKq6d0k35Mj6a1+bsYHn8+whEkeBtR/Naxs0jobD1PFUgA6C2egMdZ3jLXbYHBjVUIKhaDRAtGsyQd7xfKEll4RUYYPfEc+urv2QS5JqPGcMGh0pt98xU+Et4cCw78gpGxouRqi84yqwnHqYO75NV+wMStBfgP/a4jaqg6KvZF+7c8+RqxK0b1h8xQ6IoG/GymeU9EbwiGXfOQxw=
+    api_key:
+        secure: w+Z9J+cSkGE31331AIBhYds1z27/NhuXqlWTucfk5Z0e6KcsMD5ZIfnUykLvbkEvSyi64WKfdveFNC5mRV6sGSm90eyogwfbvREW1iSjDDR0t+uetds+n7toQAVEOMWbqbLE0P4a6k6RbIPipPsxZ+GYHyruHSaizRSg6O9Fne0f9yVZe++D9uFHXfinSKbwknJr+0sKA1tWDF/nfEkbXtvNdhlsQRr5s4d0H5YFUgiQsi//4MiafLoUqc8QXvLWIGpv1QVKwzzZqGlyixv6w6jYltMrd+vNFkTe407v9iIMPpxSAYmaPtiuEMfZ97Qli0H1bdohFr/WoNeAQYRJOKwXpg7vzNgBHfmoW7PgnEUmN9yNVdSmtLPLnkjcp+NY87VdpPuZhAtn8+Wsa+7aHcl+fgp+Cv0Btf376MPyQAdoSv/ZM2bYLTLBRLkgbeeWwkkLe+h+ScRLCBjWB6NWxIEUIqu3wErpyEYeoCj5Edy0SWKPCfZ6znzbkDARwcVVRIdkLpWcN1z+TfMv+VBwah2P8jBfssoMOm90CyQPUuU7CmP31PluDjCj5LAaOlaDSN+tPeT2BRfYHA0fMoJdpnCU8hTdoX3keGXLdDbFDpBPLHStT1BUnURqpltK/scJ/BkZ//aNStMYVtgpy1fP5FvF56+hibp1GtDXpCjatsk=
+    on:
+        branch: release/*
