@@ -1,6 +1,6 @@
 {
   "name": "sinopia-tfs-auth",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "sinopia authentication plugin using TFS api",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/pitlabs/sinopia-tfs-auth#readme",
   "dependencies": {
-    "request": "^2.81.0"
+    "request-ntlm-continued": "^0.1.5"
   },
   "devDependencies": {
     "express": "^4.15.2",
