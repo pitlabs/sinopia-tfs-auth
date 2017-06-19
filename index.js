@@ -3,6 +3,7 @@ const crypto = require('crypto');
 
 module.exports = function(config, helper){
     const tfsUrl = config.url + (config.url.substr(-1) == '/' ? '' : '/');
+    const defaultDomain = config.defaultDomain;
 
     const projectCollectionApi = '_api/_common/GetJumpList?showTeamsOnly=true&__v=5&navigationContextPackage=%7B%7D&showStoppedCollections=false&ignoreDefaultLoad=true';
 
@@ -22,6 +23,11 @@ module.exports = function(config, helper){
                 domain = parts[0];
                 parts.splice(0, 1);
                 username = parts.join('');
+            }
+            
+            // Use default domain if available and no domain was set explicitly
+            if (!domain && defaultDomain) {
+                domain = defaultDomain;
             }
             
             request.get({
