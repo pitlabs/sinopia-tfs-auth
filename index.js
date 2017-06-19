@@ -1,25 +1,47 @@
-const request = require('request');
+const request = require('request-ntlm-continued');
 const crypto = require('crypto');
 
-module.exports = function(config){
+module.exports = function(config, helper){
     const tfsUrl = config.url + (config.url.substr(-1) == '/' ? '' : '/');
+    const defaultDomain = config.defaultDomain;
 
     const projectCollectionApi = '_api/_common/GetJumpList?showTeamsOnly=true&__v=5&navigationContextPackage=%7B%7D&showStoppedCollections=false&ignoreDefaultLoad=true';
 
     const cache = {};
     const cacheTime = 60 * 1000;
+    
+    const logger = helper.logger;
 
     function getProjectCollectionsFromTfs(user, password){
         return new Promise(function(resolve, reject){
-            request.get(tfsUrl + projectCollectionApi, {
-                auth:{
-                    user: user,
-                    password: password,
-                    sendImmediately: true
-                }
+            var username = user;
+            var domain = "";
+            
+            // Extract domain
+            var parts = user.split("\\");
+            if (parts.length >= 2) {
+                domain = parts[0];
+                parts.splice(0, 1);
+                username = parts.join('');
+            }
+            
+            // Use default domain if available and no domain was set explicitly
+            if (!domain && defaultDomain) {
+                domain = defaultDomain;
+            }
+            
+            request.get({
+                url: tfsUrl + projectCollectionApi, 
+                username: username,
+                password: password,
+                ntlm_domain: domain
             },
+            null,
             function (error, response) {
                 if (error || response.statusCode != 200) {
+                    if (response && response.statusCode === 401) {
+                        logger.info({ user: user }, 'TFS login failed for user: "@{user}"');
+                    }
                     resolve(false, false);
                 } else {
                     var body = JSON.parse(response.body);

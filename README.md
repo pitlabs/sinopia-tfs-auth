@@ -22,6 +22,7 @@ Add to your `config.yaml`:
 auth:
   tfs-auth:
     url: https://tfs.example.com/tfs
+    defaultDomain: WORKGROUP (optional)
 
 packages:
   '@projectcollection/*':
